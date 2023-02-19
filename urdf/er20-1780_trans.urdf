@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="er20-1780">
+    <link name="base_link" />
+    <link name="link0">
+        <inertial>
+            <origin xyz="0.19158 -0.33435 0.43411" rpy="0 0 0" />
+            <mass value="6.8503E-06" />
+            <inertia ixx="1.7008E-10" ixy="1.4026E-24" ixz="1.461E-13" iyy="2.162E-13" iyz="-4.1804E-26" izz="1.7009E-10" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link0.stl" />
+            </geometry>
+            <material name="">
+                <color rgba="0.082353 0.082353 0.082353 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link0.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="link0" />
+        <axis xyz="0 1 0" />
+        <limit lower="-1.57" upper="1.57" effort="1" velocity="1" />
+    </joint>
+    <link name="link1">
+        <inertial>
+            <origin xyz="0.58218 -0.2259 -0.11807" rpy="0 0 0" />
+            <mass value="0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link1.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.84314 0.41176 0 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link1.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="shoulder_yaw" type="revolute">
+        <origin xyz="0.0 -0 0" rpy="1.5708 0 0" />
+        <!-- xyz="0.17441 -0.56785 0.2259" -->
+        <parent link="link0" />
+        <child link="link1" />
+        <axis xyz="0 1 0" />
+        <limit lower="-3.1415" upper="3.1415" effort="1" velocity="1" />
+    </joint>
+    <link name="link2">
+        <inertial>
+            <origin xyz="-0.81986 0.88093 0.044019" rpy="0 0 0" />
+            <mass value="0.0035972" />
+            <inertia ixx="1.4648E-05" ixy="8.3401E-06" ixz="8.2765E-07" iyy="9.9366E-06" iyz="-3.2971E-06" izz="1.9029E-05" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link2.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.98824 0.73725 0.51765 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link2.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="shoulder_pitch" type="revolute">
+        <origin xyz="-0.0024293 0.51324 0.2" rpy="1.5708 -1.5708 -1.5708" />
+        <parent link="link1" />
+        <child link="link2" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.7925268" upper="1.65806279" effort="1" velocity="1" />
+    </joint>
+    <link name="link3">
+        <inertial>
+            <origin xyz="0.74464 1.4001 0.58461" rpy="0 0 0" />
+            <mass value="0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link3.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.082353 0.082353 0.082353 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link3.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="elbow_pitch" type="revolute">
+        <origin xyz="0 0.79 0" rpy="-3.1416 0 3.1416" />
+        <parent link="link2" />
+        <child link="link3" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.96705973" upper="1.3962634" effort="1" velocity="1" />
+    </joint>
+    <link name="link4">
+        <inertial>
+            <origin xyz="-1.1436 -0.78681 -1.1163" rpy="0 0 0" />
+            <mass value="0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link4.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 0.57647 0.098039 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link4.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="wrist_roll" type="revolute">
+        <origin xyz="-0.37169 0.14 0.0024293" rpy="1.5708 -1.5708 -1.5708" />
+        <parent link="link3" />
+        <child link="link4" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.1415" upper="3.1415" effort="1" velocity="1" />
+    </joint>
+    <link name="link5">
+        <inertial>
+            <origin xyz="0.096296 0.00011572 0.00034602" rpy="0 0 0" />
+            <mass value="0.0036068" />
+            <inertia ixx="5.8318E-06" ixy="1.8702E-11" ixz="-6.4932E-11" iyy="2.9164E-06" iyz="4.5442E-10" izz="2.9188E-06" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link5.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link5.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="wrist_pitch" type="revolute">
+        <origin xyz="0 0 0.39931" rpy="1.5708 -1.5708 -1.5708" />
+        <parent link="link4" />
+        <child link="link5" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.44346095" upper="2.44346095" effort="1" velocity="1" />
+    </joint>
+    <link name="link6">
+        <inertial>
+            <origin xyz="-0.013895 -0.002605 -0.0014693" rpy="0 0 0" />
+            <mass value="0.0035972" />
+            <inertia ixx="2.1537E-05" ixy="-1.909E-06" ixz="-7.4396E-07" iyy="5.2921E-06" iyz="-5.2754E-06" izz="1.6784E-05" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link6.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://er20-1780/meshes/link6.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="wrist_yaw" type="revolute">
+        <origin xyz="0.082838 0 0" rpy="-3.0659 0 -3.1416" />
+        <parent link="link5" />
+        <child link="link6" />
+        <axis xyz="1 0 0" />
+        <limit lower="-6.2831" upper="6.2831" effort="1" velocity="1" />
+    </joint>
+    
+<transmission name="trans_shoulder_yaw">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="shoulder_yaw">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="shoulder_yaw_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_shoulder_pitch">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="shoulder_pitch">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="shoulder_pitch_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_elbow_pitch">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="elbow_pitch">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="elbow_pitch_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_wrist_roll">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wrist_roll">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wrist_roll_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_wrist_pitch">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wrist_pitch">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wrist_pitch_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_wrist_yaw">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wrist_yaw">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wrist_yaw_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>
